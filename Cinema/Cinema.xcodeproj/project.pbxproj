@@ -17,6 +17,7 @@
 		13E35A802B990C3C00755C98 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E35A7F2B990C3C00755C98 /* APIService.swift */; };
 		13E35A842B990C8600755C98 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E35A832B990C8600755C98 /* MovieResponse.swift */; };
 		13E35A862B990C9200755C98 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E35A852B990C9200755C98 /* Movie.swift */; };
+		13E35A882B990ED500755C98 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E35A872B990ED500755C98 /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		13E35A7F2B990C3C00755C98 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		13E35A832B990C8600755C98 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		13E35A852B990C9200755C98 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		13E35A872B990ED500755C98 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		13E35A782B990AED00755C98 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				13E35A872B990ED500755C98 /* MovieDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				13E35A842B990C8600755C98 /* MovieResponse.swift in Sources */,
 				13E35A7C2B990C0600755C98 /* NowPlayingViewModel.swift in Sources */,
 				13E35A682B9909E600755C98 /* ContentView.swift in Sources */,
+				13E35A882B990ED500755C98 /* MovieDetailView.swift in Sources */,
 				13E35A7E2B990C1A00755C98 /* PopularMoviesViewModel.swift in Sources */,
 				13E35A662B9909E600755C98 /* CinemaApp.swift in Sources */,
 				13E35A802B990C3C00755C98 /* APIService.swift in Sources */,
