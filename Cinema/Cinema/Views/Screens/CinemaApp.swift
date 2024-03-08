@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct CinemaApp: App {
+    @State var isShowingSplashScreen = true // Añade esta línea
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isShowingSplashScreen {
+                SplashScreenView(isShowingSplashScreen: $isShowingSplashScreen)
+            } else {
+                ContentView()
+            }
         }
     }
 }
