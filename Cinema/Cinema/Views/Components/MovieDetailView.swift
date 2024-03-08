@@ -19,17 +19,28 @@ struct MovieDetailView: View {
             } else if let movie = movieDetails {
                 ScrollView {
                     VStack {
-                        
                         Spacer()
                         
-                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath ?? "")")) { image in
-                            image.resizable()
-                        } placeholder: {
-                            Image(systemName: "film.fill").resizable()
+                        ZStack {
+                            Color.blue.opacity(1)
+                                .frame(width: 255, height: 355)
+                                .cornerRadius(10)
+                            
+                            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath ?? "")")) { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 215, height: 315)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                    .shadow(radius: 5)
+                            } placeholder: {
+                                Image(systemName: "film.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 215, height: 315)
+                                    .clipped()
+                            }
                         }
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 300)
-                        .cornerRadius(10)
                         
                         Spacer()
                         
@@ -66,9 +77,8 @@ struct MovieDetailView: View {
                             }
                         }
                         
-                        Divider()
+                        Divider().padding(.bottom, 1)
                         
-                            .padding(.bottom, 1)
                         Text("Calificación: \(movie.voteAverage, specifier: "%.1f")/10")
                             .padding(.bottom, 1)
                         
@@ -79,6 +89,7 @@ struct MovieDetailView: View {
                         
                         Text("Resumen: \(movie.overview)")
                             .padding(.bottom, 1)
+                            .font(.system(size: 17))
                     }
                     .padding()
                 }
@@ -86,9 +97,10 @@ struct MovieDetailView: View {
                 Text("No se pudo cargar los detalles de la película.")
             }
         }
-        .navigationBarTitle("Detalles", displayMode: .inline)
-        .onAppear {
-            loadMovieDetails()
+        .navigationBarTitle("Detalles", displayMode: .large)
+               .navigationBarTitleDisplayMode(.large)
+               .onAppear {
+                loadMovieDetails()
         }
     }
     
@@ -98,10 +110,11 @@ struct MovieDetailView: View {
             switch result {
             case .success(let movieDetails):
                 self.movieDetails = movieDetails
+                isLoading = false
             case .failure(let error):
                 print("Error loading movie details: \(error.localizedDescription)")
+                isLoading = false
             }
-            isLoading = false
         }
     }
 }

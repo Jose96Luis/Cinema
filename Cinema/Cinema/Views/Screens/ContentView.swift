@@ -16,12 +16,12 @@ struct ContentView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("CineSpot")
-                        .font(.largeTitle)
+                        .font(.system(size: 34))
                         .padding(.vertical)
                         .frame(maxWidth: .infinity, alignment: .center)
                     
                     Text("Ahora en cines")
-                        .font(.title2)
+                        .font(.system(size: 28))
                         .padding([.leading, .trailing, .top ])
                     
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -43,22 +43,25 @@ struct ContentView: View {
                                     .frame(width: 200, height: 300)
                                     .cornerRadius(10)
                                     .shadow(radius: 5)
-                                    
-                                    /*Text(movie.title)
-                                     .frame(width: 200)
-                                     .multilineTextAlignment(.center)*/
                                 }
                                 .frame(width: 225, height: 325)
-                                .background(Color.gray.opacity(0.2))
+                                .background(Color.blue.opacity(1))
                                 .cornerRadius(10)
                             }
                         }
                         .padding([.leading, .trailing], 8)
                     }
                     
-                    Text("Más populares")
-                        .font(.title2)
-                        .padding([.leading, .trailing, .top ])
+                    HStack(spacing: 5) {
+                        Text("Más populares")
+                            .font(.system(size: 28))
+                        
+                        Image("fuego")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 28)
+                    }
+                    .padding([.leading, .trailing, .top])
                     
                     VStack {
                         LazyVStack(alignment: .center) {
@@ -90,7 +93,7 @@ struct ContentView: View {
                                                 .font(.subheadline)
                                         }
                                         Spacer()
-                                        
+                                    
                                         ZStack {
                                             Circle()
                                                 .stroke(lineWidth: 5)
@@ -106,9 +109,8 @@ struct ContentView: View {
                                     }
                                 }
                                 .frame(height: 100)
-                                .background(Color.orange.opacity(0.2))
+                                .background(Color.blue.opacity(0.2))
                                 .cornerRadius(10)
-                                //.padding([.leading, .trailing], 8)
                             }
                         }
                     }
